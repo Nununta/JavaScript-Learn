@@ -104,3 +104,54 @@ function peer(food) {
 
 washed(bring, "にんじん");
 
+
+//ツイートをキャンセルしますか？という表示を出させる例文
+
+function unfollow() {
+    console.log("フォローを外しました");
+  }
+  function canselTweet() {
+    console.log("ツイートをキャンセルしました");
+  }
+  →匿名関数に切り替えると
+//   const canselTweet = function() {
+//     console.log("ツイートをキャンセルしました");
+//   }
+  
+  function confirmed(fn) {
+    if (window.confirm("実行しますか?")){
+      fn();
+    }
+  }
+  
+  confirmed(canselTweet);
+
+
+  //Gitのキャンセル処理の例
+
+  function confirmed(fn) {
+    const input = window.prompt("実行しますか?");
+    if (input === "実行") {
+      fn();
+    }
+  }
+  
+  confirmed(function () {
+    console.log("リポジトリを削除する");
+  });
+
+  //高階関数例①
+
+  const btn = document.getElementById("button");
+  btn.addEventListener("click", function(){
+      console.log("フォロー解除");
+  });
+
+  
+  //高階関数例②　配列処理
+  const foods = ["にんじん","じゃがいも","玉ねぎ"];
+  
+  foods.forEach(function(food) {
+    console.log(food);
+  });
+→コンソールに、にんじん、じゃがいも、玉ねぎと出力させられる
